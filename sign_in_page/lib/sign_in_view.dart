@@ -152,7 +152,7 @@ class SignInView extends StatelessWidget {
                   minWidth: widthOfScreen,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
-                    side: BorderSide(width: 2, style: BorderStyle.solid),
+                    side: BorderSide(width: 2, style: BorderStyle.solid, color: Color(0xFF232e4b).withOpacity(0.5)),
                   ),
                   height: 55,
                   color: Colors.white,
