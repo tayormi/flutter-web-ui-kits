@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_in_page/views/centered_view.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-class ScaffoldWidget extends StatelessWidget {
-
+class ScaffoldWidget extends StatefulWidget {
+  
   final double widthOfScreen;
   final Color mainBackgroundColor;
   final Color boxDecorationColor;
@@ -24,14 +24,23 @@ class ScaffoldWidget extends StatelessWidget {
   this.richTextColor, this.newOnOurPlatformColor, this.roundedRectangularBorderColor,
   this.materialButtonColor, this.materialButtonTextColor, this.bottomTextColor});
 
+  
+  @override
+  _ScaffoldWidgetState createState() => _ScaffoldWidgetState();
+}
+
+class _ScaffoldWidgetState extends State<ScaffoldWidget> {
+  // ···
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1E1E21),
+      backgroundColor: mainBackgroundColor,
       body: CenteredView(
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.black54, borderRadius: BorderRadius.circular(5)),
+                color: boxDecorationColor, borderRadius: BorderRadius.circular(5)),
             height: 800,
             width: 600,
             child: Column(
@@ -51,6 +60,37 @@ class ScaffoldWidget extends StatelessWidget {
                         inactiveTextColor: Colors.grey[900],
                         labels: ['Light', 'Dark'],
                         onToggle: (index) {
+                          setState ({
+                            if (index == 0) {
+                         
+  mainBackgroundColor = Colors.white;
+  boxDecorationColor = Colors.white;
+  signInTextColor = Colors.white;
+  emailTextColor = Colors.white;
+  textFieldBorderColor = Colors.white;
+  hintTextColor = Colors.white;
+  richTextColor = Colors.white;
+  newOnOurPlatformColor = Colors.white;
+  roundedRectangularBorderColor = Colors.white;
+  materialButtonColor = Colors.white;
+  materialButtonTextColor = Colors.white;
+  bottomTextColor = Colors.white;
+                              
+                            }else if (index == 1) {
+                              mainBackgroundColor = Colors.black;
+  boxDecorationColor = Colors.white;
+  signInTextColor = Colors.white;
+  emailTextColor = Colors.white70;
+  textFieldBorderColor = Color(0xFF8C8C94);
+  hintTextColor = Colors.white30;
+  richTextColor = Color(0xFF8C9494);
+  newOnOurPlatformColor = Color(0xFF8C9494);
+  roundedRectangularBorderColor = Color(0xFFF43C7C);
+  materialButtonColor = Colors.black54;
+  materialButtonTextColor = Color(0xFF8C9494);
+  bottomTextColor = Color(0xFF8C8C94);
+                            }
+                          });
 
 //                          print('switched to: $index');
                         },
@@ -66,7 +106,7 @@ class ScaffoldWidget extends StatelessWidget {
                       Text('Sign-In',
                           style: GoogleFonts.openSans(
                               fontSize: 25,
-                              color: Colors.white,
+                              color: signInTextColor,
                               fontWeight: FontWeight.w600)),
                       SizedBox(height: 40),
                       Row(
@@ -75,7 +115,7 @@ class ScaffoldWidget extends StatelessWidget {
                           Text('Email or phone number',
                               style: GoogleFonts.openSans(
                                   fontSize: 14,
-                                  color: Colors.white70,
+                                  color: emailTextColor,
                                   fontWeight: FontWeight.w600)),
                           Text('Need Help?',
                               style: GoogleFonts.openSans(
@@ -97,28 +137,28 @@ class ScaffoldWidget extends StatelessWidget {
                               fillColor: Colors.black,
                               border: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFF8C8C94),
+                                  color: textFieldBorderColor,
                                   width: 1.0,
                                   style: BorderStyle.solid,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFF8C8C94),
+                                  color: textFieldBorderColor,
                                   width: 1.0,
                                   style: BorderStyle.solid,
                                 ),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFF8C8C94),
+                                  color: textFieldBorderColor,
                                   width: 1.0,
                                   style: BorderStyle.solid,
                                 ),
                               ),
                               hintStyle: GoogleFonts.openSans(
                                   fontSize: 13,
-                                  color: Colors.white30,
+                                  color: hintTextColor,
                                   fontWeight: FontWeight.w600),
                               hintText: 'Enter your email address or phone number'),
                         ),
@@ -150,7 +190,7 @@ class ScaffoldWidget extends StatelessWidget {
                             style: GoogleFonts.openSans(
                                 textStyle: TextStyle(
                                     fontSize: 12,
-                                    color: Color(0xFF8C8C94),
+                                    color: richTextColor,
                                     fontWeight: FontWeight.w500)),
                             children: <TextSpan>[
                               TextSpan(
@@ -158,21 +198,21 @@ class ScaffoldWidget extends StatelessWidget {
                                   style: GoogleFonts.openSans(
                                       fontSize: 12,
                                       textStyle: TextStyle(
-                                          color: Color(0xFF8C9494),
+                                          color: richTextColor,
                                           fontWeight: FontWeight.bold))),
                               TextSpan(
                                   text: 'and',
                                   style: GoogleFonts.openSans(
                                       fontSize: 12,
                                       textStyle: TextStyle(
-                                          color: Color(0xFF8C8C94),
+                                          color: richTextColor,
                                           fontWeight: FontWeight.w500))),
                               TextSpan(
                                   text: ' Privacy Notice',
                                   style: GoogleFonts.openSans(
                                       fontSize: 12,
                                       textStyle: TextStyle(
-                                          color: Color(0xFF8C9494),
+                                          color: richTextColor,
                                           fontWeight: FontWeight.bold)))
                             ]),
                       ),
@@ -182,7 +222,7 @@ class ScaffoldWidget extends StatelessWidget {
                       Text('New on our platform?',
                           style: GoogleFonts.openSans(
                               fontSize: 13,
-                              color: Color(0xFF8C9494),
+                              color: newOnOurPlatformColor,
                               fontWeight: FontWeight.w600)),
                       SizedBox(
                         height: 8,
@@ -193,14 +233,14 @@ class ScaffoldWidget extends StatelessWidget {
                           minWidth: widthOfScreen,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
-                            side: BorderSide(width: 2, style: BorderStyle.solid, color: Color(0xFFF43C7C).withOpacity(0.5)),
+                            side: BorderSide(width: 2, style: BorderStyle.solid, color: roundedRectangularBorderColor.withOpacity(0.5)),
                           ),
                           height: 55,
-                          color: Colors.black54,
+                          color: materialButtonColor,
                           child: Text('Create an Account',
                               style: GoogleFonts.openSans(
                                   fontSize: 15,
-                                  color: Color(0xFF8C9494),
+                                  color: materialButtonTextColor,
                                   fontWeight: FontWeight.w600))),
                     ],
                   ),
@@ -222,24 +262,22 @@ class ScaffoldWidget extends StatelessWidget {
                       Text('Conditions of Use',
                           style: GoogleFonts.openSans(
                               fontSize: 12,
-                              color: Color(0xFF8C8C94),
+                              color: bottomTextColor,
                               fontWeight: FontWeight.w400)),
                       Text('Privacy Notice',
                           style: GoogleFonts.openSans(
                               fontSize: 12,
-                              color: Color(0xFF8C8C94),
+                              color: bottomTextColor,
                               fontWeight: FontWeight.w400)),
                       Text('Help',
                           style: GoogleFonts.openSans(
                               fontSize: 12,
-                              color: Color(0xFF8C8C94),
+                              color: bottomTextColor,
                               fontWeight: FontWeight.w400)),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 100,
-                ),
+                
               ],
             ),
           )),
