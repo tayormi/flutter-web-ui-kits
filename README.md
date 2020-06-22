@@ -12,10 +12,10 @@ Simple, Web User Interface written in Flutter for your projects.
 
 ### Light Mode
 <div style="background-color:rgb(169,169,169); text-align:center">
-<img src="screenshot/screenshot_light.png" width="1200" style="border-radius: 15px">
+<img src="https://github.com/easyakowe/flutter-web-ui-kits/blob/master/screenshot/screenshot_light.PNG" width="1200" style="border-radius: 15px">
 </div>
 
 ### Dark Mode
 <div style="background-color:rgb(169,169,169); text-align:center">
-<img src="screenshot/screenshot_dark.png" width="1200" style="border-radius: 15px">
+<img src="https://github.com/easyakowe/flutter-web-ui-kits/blob/master/screenshot/screenshot_dark.PNG" width="1200" style="border-radius: 15px">
 </div>
