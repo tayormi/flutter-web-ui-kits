@@ -13,6 +13,22 @@ class MyApp extends StatelessWidget {
       title: 'Sign In Page',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+
+
+
+
+//        primaryColor: Color(0xFF1E1E21),
+//        accentColor: Color(0xFFBE3760),
+//        scaffoldBackgroundColor: Color(0xFF0A0E21),
+//        textTheme: TextTheme(
+//          body1: TextStyle(
+//              color: Colors.white),
+//        ),
+
+
+
+
+
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -26,7 +42,7 @@ class MyApp extends StatelessWidget {
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+//        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SignInView(),
     );
